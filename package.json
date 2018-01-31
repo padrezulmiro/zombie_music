@@ -1,0 +1,22 @@
+{
+  "name": "zombie-music",
+  "version": "0.0.1",
+  "description": "Fingerlicious tapping clicker game",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aZul",
+  "license": "ISC",
+  "dependencies": {
+    "phaser-ce": "^2.9.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "gulp": "^3.9.1",
+    "gulp-bro": "^1.0.3",
+    "gulp-rename": "^1.2.2"
+  }
+}
