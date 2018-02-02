@@ -16,8 +16,6 @@ window.onload = function() {
         "game_canvas"
     );
 
-    console.log(GAME);
-
     GAME.state.add("LoadGame", loadGame.loadGame);
     GAME.state.add("PlayGame", playGame.playGame);
     GAME.state.start("LoadGame");
