@@ -1,22 +1,28 @@
  "use strict";
 
-import loadGame from "./src/states/loadGame.js";
-import playGame from "./src/states/playGame.js";
+import load from "./src/states/LoadGame.js";
+import play from "./src/states/PlayGame.js";
+
+class Game extends Phaser.Game {
+
+    constructor(game_options) {
+        super(gameOptions);
+    }
+}
 
 let gameOptions = {
     gameWidth: 800,
-    gameHeight: 600
+    gameHeight: 600,
+    renderer: Phaser.AUTO,
+    parent: "game_canvas"
 };
 
 window.onload = function() {
-    const GAME = new Phaser.Game(
-        gameOptions.gameWidth,
-        gameOptions.gameHeight,
-        Phaser.AUTO,
-        "game_canvas"
-    );
+    const GAME = new Game(gameOptions);
 
-    GAME.state.add("LoadGame", loadGame.loadGame);
-    GAME.state.add("PlayGame", playGame.playGame);
+    GAME.state.add("LoadGame", load.LoadGame);
+    GAME.state.add("PlayGame", play.PlayGame);
     GAME.state.start("LoadGame");
 };
+
+//todo Replace let's with const's where applicable
