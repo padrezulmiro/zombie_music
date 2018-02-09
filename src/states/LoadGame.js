@@ -9,8 +9,12 @@ class LoadGame extends Phaser.State {
     }
 
     create() {
-        this.game.state.start("PlayGame")
+        this.game.input.mousePointer.leftButton.onDown.addOnce (function() {
+            this.game.state.start("PlayGame");
+        }, this);
     }
+
+    update() {}
 }
 
 export default {LoadGame};

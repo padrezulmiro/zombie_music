@@ -1,2 +1,11 @@
-const ZombieGroup = Object.create(Phaser.Group);
-ZombieGroup
+class ZombieGroup extends Phaser.group {
+    constructor(game, name) {
+        super(game, null, name);
+
+    }
+
+    spawn(type) {
+
+    }
+
+}

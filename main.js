@@ -6,7 +6,7 @@ import play from "./src/states/PlayGame.js";
 class Game extends Phaser.Game {
 
     constructor(game_options) {
-        super(gameOptions);
+        super(game_options);
     }
 }
 

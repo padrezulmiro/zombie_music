@@ -13,7 +13,8 @@ class PlayGame extends Phaser.State {
         this.hero.scale.setTo(2, 2);
         this.centerSprite(this.hero);
 
-        this.rhythmManager = new RM.RhythmManager(this.game, level.LEVEL);
+        this.rhythmManager = new RM.RhythmManager(this.game.time.events, level.LEVEL);
+        this.rhythmManager.activate();
     }
 
     update() {}
