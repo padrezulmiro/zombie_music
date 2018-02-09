@@ -1,6 +1,12 @@
-class RhythmManager{
-    constructor(timer, level) {
-        this.timer = timer;
+class RhythmManager {
+    /*
+    Parses a level object and creates timers via Phaser.Timer that marks the cues for zombie
+    spawning.
+     */
+
+    constructor(game, level) {
+        this.game = game;
+        this.timer = game.time.events;
         this.level = level;
         this.active = false;
 
