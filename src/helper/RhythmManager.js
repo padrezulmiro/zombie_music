@@ -32,16 +32,16 @@ class RhythmManager {
 
     _getSpawnCues(start, wait = 0) {
         //todo This implementation won't allow for multiple spawns at the same time
-        const pulseRatio = 60/this.level.pulse;
+        const pulseRatio = 60/this.level.bpm;
         let delayArray = [];
 
-        this.level.rhythmSections.reduce((delayAccumulator, section) => {
+        this.level.sections.reduce((delayAccumulator, section) => {
             let delay = delayAccumulator,
                 totalRhythmArray = [];
 
             let c = section.compasses;
             for (c; c !== 0; c--) {
-                totalRhythmArray = totalRhythmArray.concat(section.rhythm);
+                totalRhythmArray = totalRhythmArray.concat(section.zombies);
             }
 
             totalRhythmArray.forEach((beat) => {

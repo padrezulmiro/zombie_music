@@ -1,4 +1,4 @@
-import level from "../config/level1"
+import level from "../config/Level1"
 import RM from "../helper/RhythmManager"
 
 class PlayGame extends Phaser.State {

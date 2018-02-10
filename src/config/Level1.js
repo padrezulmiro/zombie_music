@@ -1,11 +1,10 @@
 const LEVEL = {
-    //BPM
-    pulse: 120,
+    bpm: 120,
     time_signature: 4,
-    rhythmSections: [
+    sections: [
         {
             compasses: 16,
-            rhythm: [
+            zombies: [
                 1,
                 1,
                 1,
@@ -14,7 +13,7 @@ const LEVEL = {
         },
         {
             compasses: 16,
-            rhythm: [
+            zombies: [
                 0.5,
                 0.5,
                 1,

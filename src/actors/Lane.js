@@ -7,7 +7,7 @@ class Lane extends Phaser.group {
      */
 
     constructor(game, parent, name, side) {
-        super(game, parent, name);
+        super(game, parent, name, false, true, Phaser.Physics.ARCADE);
 
         this.side = _setSide(side);
     }
@@ -19,6 +19,8 @@ class Lane extends Phaser.group {
         return side;
     };
 
-    spawn(type) {}
+    spawn(type = 'enemy_standing') {
+        this.create()
+    }
 
 }

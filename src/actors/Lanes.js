@@ -30,7 +30,7 @@ class Lanes extends Phaser.Group {
 
     spawn(type, lane) {
         if (!this.lanes.hasOwnProperty(lane)) {
-            return false;
+            return;
         }
 
         this.lanes[lane].spawn(type);
