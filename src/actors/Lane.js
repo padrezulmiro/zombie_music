@@ -1,4 +1,7 @@
-class Lane extends Phaser.group {
+import Level from "../config/Level1"
+import Spawn from '../helper/Spawn'
+
+export default class Lane extends Phaser.Group {
     /*
     Represents one of two lanes: W and E
 
@@ -6,21 +9,20 @@ class Lane extends Phaser.group {
     class
      */
 
-    constructor(game, parent, name, side) {
+    constructor(game, parent, name, config) {
         super(game, parent, name, false, true, Phaser.Physics.ARCADE);
 
-        this.side = _setSide(side);
+        this.game = game;
+        this.x = config.x;
+        this.y = config.y;
+        this.side = config.side;
+        this.spawns = new Spawn(this.game, Level.LEVEL, this.side)
+
+
     }
 
-    _setSide(side) {
-        this.x = side === 'e' ? 750 : 50;
-        this.y = 300;
-
-        return side;
-    };
-
-    spawn(type = 'enemy_standing') {
-        this.create()
+    startSpawning(time) {
+        this.spawns.start(time);
     }
 
 }

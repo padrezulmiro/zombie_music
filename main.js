@@ -1,18 +1,18 @@
  "use strict";
 
-import load from "./src/states/LoadGame.js";
-import play from "./src/states/PlayGame.js";
+import load from "./src/states/LoadGame";
+import play from "./src/states/PlayGame";
 
 class Game extends Phaser.Game {
 
-    constructor(game_options) {
-        super(game_options);
+    constructor(options) {
+        super(options);
     }
 }
 
 let gameOptions = {
-    gameWidth: 800,
-    gameHeight: 600,
+    width: 1280,
+    height: 720,
     renderer: Phaser.AUTO,
     parent: "game_canvas"
 };
@@ -20,8 +20,8 @@ let gameOptions = {
 window.onload = function() {
     const GAME = new Game(gameOptions);
 
-    GAME.state.add("LoadGame", load.LoadGame);
-    GAME.state.add("PlayGame", play.PlayGame);
+    GAME.state.add("LoadGame", load);
+    GAME.state.add("PlayGame", play);
     GAME.state.start("LoadGame");
 };
 

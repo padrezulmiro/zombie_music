@@ -1,7 +1,6 @@
-import level from "../config/Level1"
-import RM from "../helper/RhythmManager"
+import Lanes from '../actors/Lanes'
 
-class PlayGame extends Phaser.State {
+export default class PlayGame extends Phaser.State {
     constructor() {
         super();
     }
@@ -9,12 +8,11 @@ class PlayGame extends Phaser.State {
     preload() {}
 
     create() {
+        this.lanes = new Lanes(this.game, 'lanes');
+
         this.hero = this.add.sprite(0, 0, "hero_standing", 0);
         this.hero.scale.setTo(2, 2);
         this.centerSprite(this.hero);
-
-        this.rhythmManager = new RM.RhythmManager(this.game, level.LEVEL);
-        this.rhythmManager.activate();
     }
 
     update() {}
@@ -28,5 +26,3 @@ class PlayGame extends Phaser.State {
         spr.position.setTo(center_x, center_y);
     }
 }
-
-export default {PlayGame};

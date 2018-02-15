@@ -1,24 +1,52 @@
 const LEVEL = {
     bpm: 120,
-    time_signature: 4,
+    timeSignature: 4,
     sections: [
         {
+            lane: "west",
             compasses: 16,
             zombies: [
-                1,
-                1,
-                1,
-                1,
+                {
+                    type: "Imp",
+                    velocity: 1,
+                    laneTimeout: 1,
+                },
+                {
+                    type: "Imp",
+                    velocity: 1,
+                    laneTimeout: 1,
+                },
+                {
+                    type: "Imp",
+                    velocity: 1,
+                    laneTimeout: 1,
+                },
+                {
+                    type: "Imp",
+                    velocity: 1,
+                    laneTimeout: 1,
+                }
             ]
         },
         {
+            lane: "east",
             compasses: 16,
             zombies: [
-                0.5,
-                0.5,
-                1,
-                1,
-                1
+                {
+                    type: "Hollow",
+                    velocity: 1,
+                    laneTimeout: 2,
+                },
+                {
+                    type: "Imp",
+                    velocity: 1,
+                    laneTimeout: 1,
+                },
+                {
+                    type: "Imp",
+                    velocity: 1,
+                    laneTimeout: 1,
+                }
             ]
         }
     ]

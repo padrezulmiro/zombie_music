@@ -1,4 +1,4 @@
-class LoadGame extends Phaser.State {
+export default class LoadGame extends Phaser.State {
     constructor() {
         super();
     }
@@ -16,5 +16,3 @@ class LoadGame extends Phaser.State {
 
     update() {}
 }
-
-export default {LoadGame};

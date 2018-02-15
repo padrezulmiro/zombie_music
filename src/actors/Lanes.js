@@ -1,11 +1,11 @@
-import RhythmManager from "../helper/RhythmManager";
+import Lane from './Lane'
 
-class Lanes extends Phaser.Group {
+ export default class Lanes extends Phaser.Group {
     /*
     Creates and manages access to the lanes from which the zombies attack: West and East.
      */
 
-    constructor(game, name, level) {
+    constructor(game, name) {
         /*
         @ https://photonstorm.github.io/phaser-ce/Phaser.Group.html#parent:
 
@@ -16,23 +16,32 @@ class Lanes extends Phaser.Group {
 
         super(game, null, name);
 
-        this.rhythms = new RhythmManager(game, level);
         this.lanes = {};
+        this.LANE_CONFIG = {
+            west: {
+                x: 50,
+                y: 360,
+                side: 'west'
+            },
 
-        const westLane = new Lane(game, this, 'west', 'w');
-        const eastLane = new Lane(game, this, 'east', 'e');
+            east: {
+                x: 1230,
+                y: 360,
+                side: 'east'
+            }
+        };
 
-        this.lanes.w = westLane;
-        this.lanes.e = eastLane;
+        const westLane = new Lane(game, this, 'west', this.LANE_CONFIG.west);
+        const eastLane = new Lane(game, this, 'east', this.LANE_CONFIG.east);
+
+        this.lanes.west = westLane;
+        this.lanes.east = eastLane;
 
         this.addMultiple([westLane, eastLane]);
     }
 
-    spawn(type, lane) {
-        if (!this.lanes.hasOwnProperty(lane)) {
-            return;
-        }
-
-        this.lanes[lane].spawn(type);
+    startSpawning() {
+        const startTime = this.game.time.now;
+        this.callAll('startSpawning', null, startTime);
     }
 }

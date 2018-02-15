@@ -1,5 +1,5 @@
 {
-  "name": "zombie-music",
+  "side": "zombie-music",
   "version": "0.0.1",
   "description": "Fingerlicious tapping clicker game",
   "main": "main.js",

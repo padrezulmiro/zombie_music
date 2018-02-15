@@ -1,6 +1,6 @@
 class RhythmManager {
     /*
-    Parses a level object and creates timers via Phaser.Timer that marks the cues for zombie
+    Parses a Level object and creates timers via Phaser.Timer that marks the cues for zombie
     spawning.
      */
 
@@ -32,6 +32,7 @@ class RhythmManager {
 
     _getSpawnCues(start, wait = 0) {
         //todo This implementation won't allow for multiple spawns at the same time
+
         const pulseRatio = 60/this.level.bpm;
         let delayArray = [];
 
@@ -41,7 +42,7 @@ class RhythmManager {
 
             let c = section.compasses;
             for (c; c !== 0; c--) {
-                totalRhythmArray = totalRhythmArray.concat(section.zombies);
+                totalRhythmArray = totalRhythmArray.concat(section.zombies.laneTimeout);
             }
 
             totalRhythmArray.forEach((beat) => {
@@ -68,8 +69,6 @@ class RhythmManager {
             const delay = cue * this.SECOND;
             this.timer.add(delay, timerCallback, this, delay);
         }, this);
-
-
     }
 }
 
