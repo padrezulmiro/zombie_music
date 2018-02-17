@@ -1,24 +1,20 @@
-class ZombieMoveset {
-    /*
-    A collection of behaviour snippets for the zombies
+/*
+A collection of behaviour snippets for the zombies
 
-    Example:
+Example:
 
-    1- A simple moveset where the zombie just walks (in time) towards the player
-    2- The same as before but when it reaches the player
-     */
-    constructor() {
+1- A simple moveset where the zombie just walks (in lane rings) towards the player
+2- The same as before but when it reaches the player
+ */
 
-    }
+function moveFoward(steps) {
+    
+}
 
-    moveFoward(steps) {
-
-    }
-
-    moveBackwards(steps) {
-
-    }
-
+function moveBackwards(steps) {
 
 }
+
+
+
 

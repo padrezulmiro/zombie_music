@@ -25,4 +25,6 @@ export default class Lane extends Phaser.Group {
         this.spawns.start(time);
     }
 
+    //todo Add functionality for the rings in the lane which denote "distance" from the player in units of beats
+
 }

@@ -1,0 +1,3 @@
+const getVectorXY = (intensity, angle) => {
+    
+};
