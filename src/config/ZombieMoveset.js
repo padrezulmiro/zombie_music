@@ -8,7 +8,7 @@ Example:
  */
 
 function moveFoward(steps) {
-    
+   this.body.velocity.set()
 }
 
 function moveBackwards(steps) {
