@@ -8,6 +8,7 @@ export default class PlayGame extends Phaser.State {
     preload() {}
 
     create() {
+        this.add.sprite(0, 0, 'background');
         this.lanes = new Lanes(this.game, 'lanes');
 
         this.hero = this.add.sprite(0, 0, "hero_standing", 0);
